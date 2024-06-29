@@ -23,7 +23,9 @@ TODO: sudo rmmod proc_count: remove the kernel module
 ```python
 python -m unittest
 ```
-TODO: ![Screenshot 2024-06-29 at 5.54.53 PM](/Users/raoyinan/Library/Application Support/typora-user-images/Screenshot 2024-06-29 at 5.54.53 PM.png)
+TODO: Ran 3 tests in 4.503s
+
+OK.
 
 Report which kernel release version you tested your module on
 (hint: use `uname`, check for options with `man uname`).
