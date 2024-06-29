@@ -1,27 +1,29 @@
 # A Kernel Seedling
-TODO: intro
+TODO:  In this lab, we implement a kernel module to count the current process number.
 
 ## Building
 ```shell
-TODO: cmd for build
+TODO: make: compile the c file
+			sudo insmod proc_count.ko: insert the compiled kernel module
 ```
 
 ## Running
 ```shell
-TODO: cmd for running binary
+TODO: cat /proc/count: access the count file to trigger the related show function proc_count, compute and output the process number
 ```
-TODO: results?
+TODO: 136
 
 ## Cleaning Up
 ```shell
-TODO: cmd for cleaning the built binary
+TODO: sudo rmmod proc_count: remove the kernel module
+			make clean: clean the compiled c file and other stuff
 ```
 
 ## Testing
 ```python
 python -m unittest
 ```
-TODO: results?
+TODO: ![Screenshot 2024-06-29 at 5.54.53 PM](/Users/raoyinan/Library/Application Support/typora-user-images/Screenshot 2024-06-29 at 5.54.53 PM.png)
 
 Report which kernel release version you tested your module on
 (hint: use `uname`, check for options with `man uname`).
@@ -30,4 +32,4 @@ It should match release numbers as seen on https://www.kernel.org/.
 ```shell
 uname -r -s -v
 ```
-TODO: kernel ver?
+TODO: Linux 5.14.8-arch1-1
