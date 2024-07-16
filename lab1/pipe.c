@@ -14,15 +14,7 @@ int main(int argc, char *argv[])
 		perror("No arguments");
 		exit(EINVAL);
 	}
-	if (argc == 2)
-	{
-		err = execlp(argv[1], argv[1], NULL);
-		if (err == -1)
-		{
-			perror("execlp");
-			exit(EINVAL);
-		}
-	}
+	
 	else
 	{
 		int i;
