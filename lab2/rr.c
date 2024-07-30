@@ -211,6 +211,10 @@ int main(int argc, char *argv[])
       cur_process->completion_time = current_time;
       int waiting_time= current_time - cur_process->arrival_time - cur_process->burst_time;
       total_waiting_time += waiting_time;
+      for(int i=queued_index;data[i].arrival_time<=current_time&&i<size;i++){
+        TAILQ_INSERT_TAIL(&list, &data[i], pointers);
+        queued_index++;
+      }
       finished_count++;
     }
     else
