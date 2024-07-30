@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/raoyinan/UCLA_24_SU/OS/lab/lab2/rr'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _next_int, symObjAddr: 0x0, symBinAddr: 0x1000034B0, symSize: 0x10C }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _next_int, symObjAddr: 0x0, symBinAddr: 0x1000034B0, symSize: 0x10C }
+  - { offsetInCU: 0xB6, offset: 0xB6, size: 0x8, addend: 0x0, symName: _next_int_from_c_str, symObjAddr: 0x10C, symBinAddr: 0x1000035BC, symSize: 0xE0 }
+  - { offsetInCU: 0x116, offset: 0x116, size: 0x8, addend: 0x0, symName: _init_processes, symObjAddr: 0x1EC, symBinAddr: 0x10000369C, symSize: 0x2A8 }
+  - { offsetInCU: 0x237, offset: 0x237, size: 0x8, addend: 0x0, symName: _compare_processes, symObjAddr: 0x494, symBinAddr: 0x100003944, symSize: 0xE0 }
+  - { offsetInCU: 0x289, offset: 0x289, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x574, symBinAddr: 0x100003A24, symSize: 0x45C }
+...
