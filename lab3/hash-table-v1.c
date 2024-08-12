@@ -7,7 +7,7 @@
 #include <errno.h>
 #include <pthread.h>
 
-pthread_mutex_t lock;
+
 struct list_entry {
 	const char *key;
 	uint32_t value;
@@ -22,6 +22,7 @@ struct hash_table_entry {
 
 struct hash_table_v1 {
 	struct hash_table_entry entries[HASH_TABLE_CAPACITY];
+	pthread_mutex_t lock;
 };
 
 struct hash_table_v1 *hash_table_v1_create()
@@ -76,11 +77,11 @@ void hash_table_v1_add_entry(struct hash_table_v1 *hash_table,
 	struct hash_table_entry *hash_table_entry = get_hash_table_entry(hash_table, key);
 	struct list_head *list_head = &hash_table_entry->list_head;
 	struct list_entry *list_entry = get_list_entry(hash_table, key, list_head);
-	if (pthread_mutex_init(&lock, NULL) != 0) {
+	if (pthread_mutex_init(&hash_table->lock, NULL) != 0) {
 		printf("mutex init has failed\n");
 		exit(EINVAL);
 	}
-	if (pthread_mutex_lock(&lock) != 0) {
+	if (pthread_mutex_lock(&hash_table->lock) != 0) {
 		printf("mutex lock has failed\n");
 		exit(EINVAL);
 	}
@@ -95,11 +96,11 @@ void hash_table_v1_add_entry(struct hash_table_v1 *hash_table,
 	list_entry->key = key;
 	list_entry->value = value;
 	SLIST_INSERT_HEAD(list_head, list_entry, pointers);
-	if (pthread_mutex_unlock(&lock) != 0) {
+	if (pthread_mutex_unlock(&hash_table->lock) != 0) {
 		printf("mutex unlock has failed\n");
 		exit(EINVAL);
 	}
-	if (pthread_mutex_destroy(&lock) != 0) {
+	if (pthread_mutex_destroy(&hash_table->lock) != 0) {
 		printf("mutex destroy has failed\n");
 		exit(EINVAL);
 	}
