@@ -72,11 +72,11 @@ Then run `ls -ain mnt/`, we have the following output:
 
 ````
 total 7
-2 drwxr -xr-x 3 0 0 1024 .
-												 ..
-13 lrw-r--r-- 1 1000 1000 11 hello -> hello -world
-12 -rw-r--r-- 1 1000 1000 12 hello -world
-11 drwxr -xr-x 2 0 0 1024 lost+found
+2   drwxr-xr-x 3    0    0  1024  .
+519	drwxr-xr-x 5 1000	1000  4096  ..
+13  lrw-r--r-- 1 1000 1000  11    hello -> hello -world
+12  -rw-r--r-- 1 1000 1000  12    hello -world
+11  drwxr-xr-x 2    0    0  1024  lost+found
 ````
 
 which is exactly the filesystem.
